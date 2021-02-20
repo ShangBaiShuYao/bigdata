@@ -42,7 +42,6 @@ public class WordCountDriver {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         //7. 提交Job
-
         boolean result = job.waitForCompletion(true);
         System.exit(result?0:1);
 
