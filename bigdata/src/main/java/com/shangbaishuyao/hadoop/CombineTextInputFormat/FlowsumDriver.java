@@ -1,13 +1,15 @@
-package com.shangbaishuyao.hadoop.Writable;
+package com.shangbaishuyao.hadoop.CombineTextInputFormat;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.CombineTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
+
 /**
  * Desc: Driver驱动类 <br/>
  * create by shangbaishuyao on 2021/2/20
@@ -18,7 +20,7 @@ public class FlowsumDriver {
     public static void main(String[] args) throws IllegalArgumentException, IOException, ClassNotFoundException, InterruptedException {
 
         // 输入输出路径需要根据自己电脑上实际的输入输出路径设置
-        args = new String[] { "H:/IDEA_WorkSpace/bigdata/bigdata/src/main/resources/Writable", "H:/IDEA_WorkSpace/bigdata/bigdata/src/main/resources/Writable/out" };
+        args = new String[] { "H:/IDEA_WorkSpace/bigdata/bigdata/src/main/resources/CombineTextInputFormat", "H:/IDEA_WorkSpace/bigdata/bigdata/src/main/resources/CombineTextInputFormat/out" };
 
         // 1 获取配置信息，或者job对象实例
         Configuration configuration = new Configuration();
@@ -42,6 +44,11 @@ public class FlowsumDriver {
         // 5 指定job的输入原始文件所在目录
         FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
+
+        //实现CombineTextInputFormat
+        //在提交job之前我们使用CombineTextInputFormat来进行设置虚拟存储切片, 这是用于对小文件进行处理的.
+        job.setInputFormatClass(CombineTextInputFormat.class); //设置使用CombineTextInputFormat
+        CombineTextInputFormat.setMaxInputSplitSize(job,4194304);
 
 
         // 提交job
