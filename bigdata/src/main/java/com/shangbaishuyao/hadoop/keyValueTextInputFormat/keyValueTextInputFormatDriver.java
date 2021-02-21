@@ -15,7 +15,7 @@ import java.io.IOException;
 public class keyValueTextInputFormatDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
-        args = new String[]{"H:/IDEA_WorkSpace/bigdata/bigdata/src/main/resources/keyValueTextInputFormat","H:/IDEA_WorkSpace/bigdata/bigdata/src/main/resources/keyValueTextInputFormat/out" };
+        args = new String[]{"H:/IDEA_WorkSpace/bigdata/bigdata/src/main/resources/keyValueTextInputFormat/kv","H:/IDEA_WorkSpace/bigdata/bigdata/src/main/resources/keyValueTextInputFormat/out" };
 
         Configuration conf = new Configuration();
         // 设置切割符
