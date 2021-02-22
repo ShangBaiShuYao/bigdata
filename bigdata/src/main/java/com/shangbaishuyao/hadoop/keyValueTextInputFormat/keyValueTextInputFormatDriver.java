@@ -11,7 +11,12 @@ import org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
-
+/**
+ * Desc: 驱动类 <br/>
+ * create by shangbaishuyao on 2021/2/22
+ * @Author: 上白书妖
+ * @Date: 9:13 2021/2/22
+ */
 public class keyValueTextInputFormatDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 

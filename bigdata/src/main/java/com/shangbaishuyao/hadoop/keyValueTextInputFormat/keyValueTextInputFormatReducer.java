@@ -5,7 +5,12 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
-
+/**
+ * Desc:
+ * create by shangbaishuyao on 2021/2/22
+ * @Author: 上白书妖
+ * @Date: 9:14 2021/2/22
+ */
 public class keyValueTextInputFormatReducer extends Reducer <Text, IntWritable,Text,IntWritable>{
     IntWritable v = new IntWritable();
     @Override
