@@ -4,6 +4,7 @@ import org.apache.hadoop.mapreduce.Partitioner;
 
 /**
  * Desc:
+ *
  *  自定义分区需要继承partitioner类 , 重写getPartition方法
  *
  *  手机号为key , flowBean为value
