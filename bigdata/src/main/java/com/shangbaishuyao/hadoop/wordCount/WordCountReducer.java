@@ -8,6 +8,7 @@ import java.io.IOException;
 
 /**
  * Desc:
+ *
  * 自定义的Reduce需要继承Reduce类. 重写reduce方法
  *
  * KEYIN  表示Reducer输入的Key. 跟Mapper输出的Key类型一致
