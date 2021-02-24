@@ -20,8 +20,7 @@ import java.io.IOException;
 public class LogFilterOutputFormat extends FileOutputFormat<Text, NullWritable> {
 	
 	@Override
-	public RecordWriter<Text, NullWritable> getRecordWriter(TaskAttemptContext job)
-			throws IOException, InterruptedException {
+	public RecordWriter<Text, NullWritable> getRecordWriter(TaskAttemptContext job) throws IOException, InterruptedException {
 		
 		LogFilterRecordWriter  recordWriter = new LogFilterRecordWriter(job);
 		

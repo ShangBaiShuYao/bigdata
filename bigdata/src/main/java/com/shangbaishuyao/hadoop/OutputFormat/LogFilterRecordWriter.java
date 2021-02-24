@@ -43,8 +43,7 @@ public class LogFilterRecordWriter  extends RecordWriter<Text, NullWritable>{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}	
-	
+	}
 	
 	@Override
 	public void write(Text key, NullWritable value) throws IOException, InterruptedException {
@@ -56,9 +55,9 @@ public class LogFilterRecordWriter  extends RecordWriter<Text, NullWritable>{
 		}else {
 			otherOut.writeUTF(log);
 		}
-		
 	}
 
+	//关闭流
 	@Override
 	public void close(TaskAttemptContext context) throws IOException, InterruptedException {
 		IOUtils.closeStream(shangbaishuyaoOut);
