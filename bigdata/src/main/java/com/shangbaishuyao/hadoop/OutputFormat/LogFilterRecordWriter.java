@@ -20,7 +20,7 @@ import java.io.IOException;
  * 自定义的RecordWriter， 需要继承RecordWriter
  * 
  * 
- * 需求: 将包含"atguigu"的日志写到 d:/atguigu.log, 其他的日志写到 d:/other.log 
+ * 需求: 将包含"shangbaishuyao"的日志写到 d:/shangbaishuyao.log, 其他的日志写到 d:/other.log
  *
  */
 public class LogFilterRecordWriter  extends RecordWriter<Text, NullWritable>{
