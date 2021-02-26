@@ -1,4 +1,4 @@
-package com.shangbaishuyao.zookeeper;
+package com.shangbaishuyao.zookeeper.TestZookeeperAPI;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
