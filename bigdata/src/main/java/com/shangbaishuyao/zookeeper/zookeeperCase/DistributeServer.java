@@ -25,10 +25,7 @@ public class DistributeServer {
     public void getConnect() throws IOException{
 
         zk = new ZooKeeper(connectString, sessionTimeout, new Watcher() {
-
-            public void process(WatchedEvent event) {
-
-            }
+            public void process(WatchedEvent event) {}
         });
     }
 

@@ -26,7 +26,6 @@ public class DistributeClient {
         zk = new ZooKeeper(connectString, sessionTimeout, new Watcher() {
 
             public void process(WatchedEvent event) {
-
                 // 再次启动监听
                 try {
                     getServerList();

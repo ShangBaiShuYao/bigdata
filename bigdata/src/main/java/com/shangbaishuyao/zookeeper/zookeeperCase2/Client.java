@@ -1,4 +1,4 @@
-package com.shangbaishuyao.zookeeper.TestZookeeperAPI;
+package com.shangbaishuyao.zookeeper.zookeeperCase2;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
