@@ -1,5 +1,10 @@
 package com.shangbaishuyao.hive;
 /**
+ * Desc:
+ * create by shangbaishuyao on 2021/3/4
+ * @Author: 上白书妖
+ * @Date: 17:41 2021/3/4
+ *
  * 清洗数据:
  *   1. 判断切割后的数据长度是否大于等于9 
  *   2. 将视频类型字段中的空格去掉
