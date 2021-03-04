@@ -8,17 +8,17 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class GuLiVideoDriver {
+public class VideoDriver {
 	
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf);
 		
 		//关联jar
-		job.setJarByClass(GuLiVideoDriver.class);
+		job.setJarByClass(VideoDriver.class);
 		
 		//关联Mapper
-		job.setMapperClass(GuLiVideoMapper.class);
+		job.setMapperClass(VideoMapper.class);
 		
 		//设置Mapper的输出 key  和 value的类型
 		job.setMapOutputKeyClass(Text.class);
