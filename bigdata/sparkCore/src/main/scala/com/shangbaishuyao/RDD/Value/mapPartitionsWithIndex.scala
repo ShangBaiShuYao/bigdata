@@ -38,8 +38,12 @@ object mapPartitionsWithIndex {
     //使得每个元素跟所在分区形成一个元组,组成一个新的RDD
     val rdd2 = rdd1.mapPartitionsWithIndex((index,items)=>(items.map((index,_))))
 
-    //打印查看
-    val result1: Array[(Int, Int)] = rdd2.collect()
+//    (3,4)
+//    (1,2)
+//    (2,3)
+//    (0,1)
+    //打印看看
+    rdd2.foreach(println)
 
     //关闭连接
     sc.stop()
