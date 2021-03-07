@@ -13,7 +13,6 @@ import org.apache.spark.{SparkConf, SparkContext}
  *
  * 需求：创建一个RDD，使每个元素*2组成新的RDD
  *
- *
  * 总结:
  * 这种效率比上面map那种效率更高. 因为scala集合中的map计算过程比spark中的map算子计算过程更短.因为spark的map算子封装的东西很多
  *
