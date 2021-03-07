@@ -43,7 +43,10 @@ object mapPartitionsWithIndex {
 //    (2,3)
 //    (0,1)
     //打印看看
-    rdd2.foreach(println)
+    rdd2.foreach(println)                     //foreach对于每一条元素都要获取连接,比如我写到mysql当中,这就涉及序列化, 每一个元素写入mysql都要获取一下连接
+
+    //打印看看
+    //rdd2.foreachPartition(println)          //foreachPartitions则是每个task获取一下连接就可以了, 比foreach频繁次数少
 
     //关闭连接
     sc.stop()
