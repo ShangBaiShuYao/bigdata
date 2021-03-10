@@ -34,10 +34,9 @@ object TestRead {
     df1.write.mode(SaveMode.Append).json("./bb.json")
 
 
+    //读mysql数据库
     val properties = new Properties()
     val frame: DataFrame = spark.read.jdbc("url", "rddTable", properties)
     spark.read.format("jdbc").option("", "").load()
-
   }
-
 }
