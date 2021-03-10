@@ -11,6 +11,7 @@
     <modules>
         <module>sparkCore</module>
         <module>sparkGmall</module>
+        <module>sparkSql</module>
     </modules>
 
     <dependencies>
