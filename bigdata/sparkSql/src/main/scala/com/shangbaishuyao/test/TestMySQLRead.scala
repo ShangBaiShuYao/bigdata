@@ -22,14 +22,14 @@ object TestMySQLRead {
     //2.创建连接JDBC的参数
     val properties = new Properties()
     properties.setProperty("user", "root")
-    properties.setProperty("password", "root")
+    properties.setProperty("password", "xww2018")
 
     //3.读取MySQL数据创建DF
     //    val jdbcDF: DataFrame = spark.read.jdbc("jdbc:mysql://hadoop102:3306/rdd", "rddTable", properties)
     val jdbcDF: DataFrame = spark.read
       .format("jdbc")
-      .option("url", "jdbc:mysql://hadoop102:3306/sparkSql/rdd1")
-      .option("dbtable", " rddTable")
+      .option("url", "jdbc:mysql://127.0.0.1:3306/sparkSql")
+      .option("dbtable", " rddTable3")
       .option("user", "root")
       .option("password", "xww2018")
       .load()

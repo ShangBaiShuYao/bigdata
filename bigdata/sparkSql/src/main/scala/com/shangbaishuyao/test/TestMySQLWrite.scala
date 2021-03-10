@@ -39,7 +39,7 @@ object TestMySQLWrite {
       .option("url", "jdbc:mysql://127.0.0.1:3306/sparksql")
       .option("dbtable", "rddTable3")
       .option("user", "root")
-      .option("password", "000000")
+      .option("password", "xww2018")
       .save()
 
     //5.关闭资源
