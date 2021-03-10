@@ -1,7 +1,5 @@
 package com.shangbaishuyao.test
 
-import java.util.Properties
-
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 /**
@@ -38,7 +36,7 @@ object TestMySQLWrite {
 
     df.write
       .format("jdbc")
-      .option("url", "jdbc:mysql://hadoop102:3306/rdd")
+      .option("url", "jdbc:mysql://127.0.0.1:3306/sparksql")
       .option("dbtable", "rddTable3")
       .option("user", "root")
       .option("password", "000000")

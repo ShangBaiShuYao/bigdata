@@ -28,10 +28,10 @@ object TestMySQLRead {
     //    val jdbcDF: DataFrame = spark.read.jdbc("jdbc:mysql://hadoop102:3306/rdd", "rddTable", properties)
     val jdbcDF: DataFrame = spark.read
       .format("jdbc")
-      .option("url", "jdbc:mysql://hadoop102:3306/rdd")
+      .option("url", "jdbc:mysql://hadoop102:3306/sparkSql/rdd1")
       .option("dbtable", " rddTable")
       .option("user", "root")
-      .option("password", "root")
+      .option("password", "xww2018")
       .load()
 
     //4.打印数据
