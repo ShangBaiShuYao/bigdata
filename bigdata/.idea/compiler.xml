@@ -8,9 +8,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sparkmall-offline" />
         <module name="sparkCore" />
+        <module name="sparkmall-mock" />
+        <module name="sparkmall-online" />
+        <module name="sparkmall-common" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="sparkMall" target="1.5" />
+      <module name="sparkmall0615" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
