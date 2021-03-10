@@ -9,10 +9,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="sparkSql" />
-        <module name="sparkmall-offline" />
         <module name="sparkCore" />
         <module name="sparkmall-mock" />
         <module name="sparkmall-online" />
+        <module name="sparkmall-offline" />
         <module name="sparkmall-common" />
       </profile>
     </annotationProcessing>
