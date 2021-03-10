@@ -1,4 +1,4 @@
-package com.shangbaishuyao.test
+package com.shangbaishuyao.UDAF
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -10,7 +10,7 @@ import org.apache.spark.{SparkConf, SparkContext}
  * @Author: 上白书妖
  * @Date: 14:45 2021/3/10
  */
-object HelloWorld {
+object avgAge {
   def main(args: Array[String]): Unit = {
     //创建SparkConf并且设置APP名称
     val conf: SparkConf = new SparkConf().setAppName("helloWord").setMaster("local[*]")
@@ -22,7 +22,7 @@ object HelloWorld {
     val ss: SparkSession = SparkSession.builder().appName("helloWord").master("local[*]").getOrCreate()
 
     //4.读取JSON文件创建DF
-    val df: DataFrame = ss.read.json("G:\\存储\\桌面\\people.json")
+    val df: DataFrame = ss.read.json("G:\\存储\\桌面\\people")
 
     //5.DSL风格
     println("*************DSL*************")
@@ -32,10 +32,10 @@ object HelloWorld {
     println("*************SQL*************")
     df.createTempView("t1")
 
-    //注册函数
-//    ss.udf.register("MyAVG", new MyAvg)
+    //自定义UDAF注册函数
+    ss.udf.register("MyUDAF", new MyUDAF)
 
-    ss.sql("select MyAVG(age) from t1").show()
+    ss.sql("select MyUDAF(age) from t1").show()
 
     //7.关闭连接
     ss.stop()
