@@ -11,7 +11,7 @@ import org.apache.spark.sql.{SparkSession, _}
 
 import scala.collection.mutable.ListBuffer
 /**
- * Desc:
+ * Desc:  生成离线数据 <br/>
  * create by shangbaishuyao on 2021/3/9
  * @Author: 上白书妖
  * @Date: 14:36 2021/3/9
@@ -40,6 +40,10 @@ object MockerOffline {
   val actionsOptions: RandomOptions[String] = RandomOptions(RanOpt("search", 20), RanOpt("click", 60), RanOpt("order", 6), RanOpt("pay", 4), RanOpt("quit", 10))
 
 
+  /**
+   * 运行则生成离线数据 <br/>
+   * @param args
+   */
   def main(args: Array[String]): Unit = {
 
     val sparkConf: SparkConf = new SparkConf().setAppName("Mock").setMaster("local[*]")

@@ -10,7 +10,7 @@ import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, Produce
 import scala.collection.mutable.ArrayBuffer
 
 /**
- * Desc: 模拟的数据 <br/>
+ * Desc: 模拟数据 <br/>
  * create by shangbaishuyao on 2021/3/9
  * @Author: 上白书妖
  * @Date: 14:37 2021/3/9
