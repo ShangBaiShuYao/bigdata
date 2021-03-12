@@ -8,13 +8,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sparkmall-common" />
         <module name="sparkSql" />
-        <module name="sparkStreaming" />
         <module name="sparkCore" />
         <module name="sparkmall-mock" />
         <module name="sparkmall-online" />
         <module name="sparkmall-offline" />
-        <module name="sparkmall-common" />
+        <module name="sparkStreaming" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
