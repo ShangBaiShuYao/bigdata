@@ -19,7 +19,7 @@ object WindowWordCount3 {
     val ssc = new StreamingContext(conf, Seconds(5))
     ssc.checkpoint("./checkPoint3")
     //3.创建DStream
-    val lineDStream: ReceiverInputDStream[String] = ssc.socketTextStream("hadoop102", 9999)
+    val lineDStream: ReceiverInputDStream[String] = ssc.socketTextStream("hadoop102", 6666)
     //4.将一行数据转换为（单词，1）
     val wordToOneDStream: DStream[(String, Int)] = lineDStream.flatMap(_.split(" ")).map((_, 1))
     //5.开窗并计算WordCount
