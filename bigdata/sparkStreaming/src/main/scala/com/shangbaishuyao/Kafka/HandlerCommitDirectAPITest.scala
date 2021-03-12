@@ -48,6 +48,8 @@ object HandlerCommitDirectAPITest {
     //7.处理数据+保存当前的offset
     val getOffsetDStream: DStream[String] = kafkaDStream.transform(rdd => {
 
+      //手动维护(有事物的存储系统)
+      //获取offset必须在第一个调用的算子中：
       //取出offset
       offsetRanges = rdd.asInstanceOf[HasOffsetRanges].offsetRanges
 
