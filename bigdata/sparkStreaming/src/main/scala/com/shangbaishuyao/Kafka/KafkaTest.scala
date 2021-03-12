@@ -7,6 +7,7 @@ import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, Loca
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 /**
  * Desc: 测试kafka的0-10版本,对于0-10版本,他的consumerffset(消费者偏移量)保存在系统主题里面 <br/>
+ * 0.10这个版本是自动维护的_consumer_offset里面
  * create by shangbaishuyao on 2021/3/11
  * @Author: 上白书妖
  * @Date: 20:22 2021/3/11
