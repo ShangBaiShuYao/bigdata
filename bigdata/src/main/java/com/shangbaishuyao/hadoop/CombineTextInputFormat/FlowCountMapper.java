@@ -1,5 +1,6 @@
 package com.shangbaishuyao.hadoop.CombineTextInputFormat;
 
+import org.apache.catalina.Context;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
