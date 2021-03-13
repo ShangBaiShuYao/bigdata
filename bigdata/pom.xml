@@ -13,6 +13,8 @@
         <module>sparkGmall</module>
         <module>sparkSql</module>
         <module>sparkStreaming</module>
+        <module>Gmall</module>
+        <module>gmall-logger</module>
     </modules>
 
     <dependencies>

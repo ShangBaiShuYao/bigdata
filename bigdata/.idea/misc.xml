@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/sparkmall/sparkmall-online/pom.xml" />
         <option value="$PROJECT_DIR$/sparkGmall/pom.xml" />
         <option value="$PROJECT_DIR$/sparkGmall/sparkmall-mock/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-logger/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -20,9 +21,6 @@
         <option value="$PROJECT_DIR$/sparkMall/pom.xml" />
       </set>
     </option>
-  </component>
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/sparkGmall/derby.log" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
