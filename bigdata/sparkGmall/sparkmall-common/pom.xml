@@ -61,7 +61,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+        <!-- https://mvnrepository.com/artifact/redis.clients/jedis 需要和redis进行操作-->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
