@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="USE_RELEASE_OPTION" value="false" />
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Gmall-common" />
+        <module name="sparkSql" />
+        <module name="sparkmall-offline" />
+        <module name="sparkStreaming" />
+        <module name="sparkCore" />
+        <module name="sparkmall-mock" />
+        <module name="gmall-realTime" />
+        <module name="gmall-logger" />
+        <module name="sparkmall-online" />
+        <module name="Gmall-mockery" />
+        <module name="sparkmall-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="bigdata" target="1.5" />
+      <module name="Gmall" target="1.5" />
+      <module name="Gmall-common" target="1.5" />
+      <module name="gmall-logger" target="1.8" />
+      <module name="Gmall-mockery" target="1.5" />
+      <module name="gmall-realTime" target="1.5" />
+      <module name="sparkCore" target="1.5" />
+      <module name="sparkGmall" target="1.8" />
+      <module name="sparkmall-common" target="1.8" />
+      <module name="sparkmall-mock" target="1.8" />
+      <module name="sparkmall-offline" target="1.8" />
+      <module name="sparkmall-online" target="1.8" />
+      <module name="sparkSql" target="1.5" />
+      <module name="sparkStreaming" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gmall-logger" options="-parameters" />
+    </option>
+  </component>
+</project>

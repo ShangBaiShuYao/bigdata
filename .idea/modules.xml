@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Gmall/Gmall.iml" filepath="$PROJECT_DIR$/Gmall/Gmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gmall/Gmall-common/Gmall-common.iml" filepath="$PROJECT_DIR$/Gmall/Gmall-common/Gmall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gmall/Gmall-mockery/Gmall-mockery.iml" filepath="$PROJECT_DIR$/Gmall/Gmall-mockery/Gmall-mockery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bigdata.iml" filepath="$PROJECT_DIR$/bigdata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gmall-logger/gmall-logger.iml" filepath="$PROJECT_DIR$/gmall-logger/gmall-logger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gmall-realTime/gmall-realTime.iml" filepath="$PROJECT_DIR$/gmall-realTime/gmall-realTime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkCore/sparkCore.iml" filepath="$PROJECT_DIR$/sparkCore/sparkCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkGmall/sparkGmall.iml" filepath="$PROJECT_DIR$/sparkGmall/sparkGmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkSql/sparkSql.iml" filepath="$PROJECT_DIR$/sparkSql/sparkSql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkStreaming/sparkStreaming.iml" filepath="$PROJECT_DIR$/sparkStreaming/sparkStreaming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkGmall/sparkmall-common/sparkmall-common.iml" filepath="$PROJECT_DIR$/sparkGmall/sparkmall-common/sparkmall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkGmall/sparkmall-mock/sparkmall-mock.iml" filepath="$PROJECT_DIR$/sparkGmall/sparkmall-mock/sparkmall-mock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkGmall/sparkmall-offline/sparkmall-offline.iml" filepath="$PROJECT_DIR$/sparkGmall/sparkmall-offline/sparkmall-offline.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkGmall/sparkmall-online/sparkmall-online.iml" filepath="$PROJECT_DIR$/sparkGmall/sparkmall-online/sparkmall-online.iml" />
+    </modules>
+  </component>
+</project>
