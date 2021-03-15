@@ -69,7 +69,7 @@ object DAU {
         import org.apache.phoenix.spark._
         filterStartUpLogDStreamByGroup.saveToPhoenix(
           "gmall_DAU",
-          Seq("MID", "UID", "APPID", "AREA", "OS", "CH", "TYPE", "VS", "LOGDATE", "LOGHOUR", "TS"),
+          Seq("MID","UID","APPID","AREA","OS","CH","TYPE","VS","LOGDATE","LOGHOUR","TS"),
           new Configuration(),
           Some("hadoop102,hadoop103,hadoop104:2181"))
       }
