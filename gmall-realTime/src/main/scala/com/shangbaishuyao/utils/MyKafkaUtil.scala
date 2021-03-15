@@ -36,6 +36,4 @@ object MyKafkaUtil {
     //4.返回数据
     kafkaDStream
   }
-
-
 }
