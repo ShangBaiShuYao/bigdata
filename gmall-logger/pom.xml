@@ -95,7 +95,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-
+                <version>2.1.1.RELEASE</version>
                 <configuration>
                     <!--将jar包放置到resource的lib目录下,本地jar可以正常引用，但是打包部署默认是不打包本地jar的，所有需要在maven中做如下配置,将includeSystemScope改为true即可-->
                     <includeSystemScope>true</includeSystemScope>
