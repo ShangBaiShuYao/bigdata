@@ -9,18 +9,33 @@ import io.searchbox.core.SearchResult;
 import io.searchbox.core.search.aggregation.MaxAggregation;
 import io.searchbox.core.search.aggregation.MetricAggregation;
 import io.searchbox.core.search.aggregation.TermsAggregation;
+import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.MatchQueryBuilder;
+import org.elasticsearch.index.query.TermQueryBuilder;
+import org.elasticsearch.search.aggregations.bucket.terms.TermsAggregationBuilder;
+import org.elasticsearch.search.aggregations.metrics.max.MaxAggregationBuilder;
+import org.elasticsearch.search.aggregations.support.ValueType;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
 /**
  * Desc: 从es里面读数据,查询数据 <br/>
- * 这种方式不好
+ *
+ * 我们使用下面这个依赖做查询比较好
+ *          <dependency>
+ *             <groupId>org.elasticsearch</groupId>
+ *             <artifactId>elasticsearch</artifactId>
+ *             <version>6.3.1</version>
+ *         </dependency>
+ *
  * create by shangbaishuyao on 2021/3/17
  * @Author: 上白书妖
  * @Date: 21:46 2021/3/17
  */
-public class EsReader {
+public class EsReader2 {
     public static void main(String[] args) throws IOException {
         //1.创建JestClient工厂对象
         JestClientFactory jestClientFactory = new JestClientFactory();
@@ -30,41 +45,29 @@ public class EsReader {
         jestClientFactory.setHttpClientConfig(httpClientConfig);
         //4.获取客户端对象
         JestClient jestClient = jestClientFactory.getObject();
-        //5.构建Search对象
-        Search search = new Search.Builder("{\n" +
-                "  \"query\": {\n" +
-                "    \"bool\": {\n" +
-                "      \"filter\": {\n" +
-                "        \"term\": {\n" +
-                "          \"sex\": \"female\"\n" +
-                "        }\n" +
-                "      },\n" +
-                "      \"must\": [\n" +
-                "        {\n" +
-                "          \"match\": {\n" +
-                "            \"favo\": \"铅球\"\n" +
-                "          }\n" +
-                "        }\n" +
-                "      ]\n" +
-                "    }\n" +
-                "  },\n" +
-                "  \"aggs\": {\n" +
-                "    \"group_by_class_id\": {\n" +
-                "      \"terms\": {\n" +
-                "        \"field\": \"class_id\",\n" +
-                "        \"size\": 2\n" +
-                "      }\n" +
-                "    },\n" +
-                "    \"group_by_age\":{\n" +
-                "      \"max\": {\n" +
-                "        \"field\": \"age\"\n" +
-                "      }\n" +
-                "    }\n" +
-                "  }\n" +
-                "}").build();
+
+        //构建查询语句的对象
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        //bool关键字
+        BoolQueryBuilder boolQueryBuilder = new BoolQueryBuilder();
+        //filter关键字
+        boolQueryBuilder.filter(new TermQueryBuilder("sex", "female"));
+        //must关键字
+        boolQueryBuilder.must(new MatchQueryBuilder("favo", "铅球"));
+        //查询
+        searchSourceBuilder.query(boolQueryBuilder);
+        //aggs
+        searchSourceBuilder.aggregation(new TermsAggregationBuilder("group_by_class_id", ValueType.LONG)
+                .field("class_id")
+                .size(2));
+        searchSourceBuilder.aggregation(new MaxAggregationBuilder("group_by_age").field("age"));
+        //分页
+//        searchSourceBuilder.from(0);
+//        searchSourceBuilder.size(2);
+        Search search1 = new Search.Builder(searchSourceBuilder.toString()).build();
 
         //6.查询数据
-        SearchResult searchResult = jestClient.execute(search);
+        SearchResult searchResult = jestClient.execute(search1);
 
         //7.解析searchResult
         System.out.println("命中条数：" + searchResult.getTotal() + "条！！！");
