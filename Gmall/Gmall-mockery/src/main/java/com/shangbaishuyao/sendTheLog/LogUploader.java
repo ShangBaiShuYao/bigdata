@@ -19,9 +19,9 @@ public class LogUploader {
         try{
             //请求地址
             //不同的日志类型对应不同的URL
-//            URL url  =new URL("http://hadoop102/log");
+            URL url  =new URL("http://hadoop102/log");
             //本地测试打印
-            URL url  =new URL("http://localhost:8080/log");
+//            URL url  =new URL("http://127.0.0.1:8080/log");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             //设置请求方式为post
             conn.setRequestMethod("POST");

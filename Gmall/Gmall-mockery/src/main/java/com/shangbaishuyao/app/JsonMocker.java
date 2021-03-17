@@ -117,8 +117,9 @@ public class JsonMocker {
              `ts` bigint COMMENT '启动时间', ,
              `area` string COMMENT '城市' */
 
-        String mid = "mid_" + RandomNum.getRandInt(1, 500);
-        String uid = "" + RandomNum.getRandInt(1, 500);
+        //修改数据, 表示要造多少条数据 下面两个都要改 这里指的是5000条数据
+        String mid = "mid_" + RandomNum.getRandInt(1, 5000);
+        String uid = "" + RandomNum.getRandInt(1, 5000);
         String os = osOptionGroup.getRandomOpt().getValue();
         String appid = this.appId;
         String area = areaOptionGroup.getRandomOpt().getValue();
