@@ -77,17 +77,14 @@ public class PublisherServiceImpl implements PublisherService {
         boolQueryBuilder.must(new MatchQueryBuilder("sku_name", keyword).operator(MatchQueryBuilder.Operator.AND));
         //设置查询过滤条件
         searchSourceBuilder.query(boolQueryBuilder);
-
         //设置聚合组
         TermsBuilder genderAggs = AggregationBuilders.terms("groupby_user_gender").field("user_gender").size(2);
         TermsBuilder ageAggs = AggregationBuilders.terms("groupby_user_age").field("user_age").size(200);
         searchSourceBuilder.aggregation(genderAggs);
         searchSourceBuilder.aggregation(ageAggs);
-
         //分页
         searchSourceBuilder.from((startpage - 1) * size);
         searchSourceBuilder.size(size);
-
         //创建Map存放结果数据
         HashMap<String, Object> resultMap = new HashMap<>();
 
@@ -121,10 +118,9 @@ public class PublisherServiceImpl implements PublisherService {
             resultMap.put("ageMap", ageMap);
             resultMap.put("genderMap", genderMap);
             resultMap.put("detail", detailList);
-
         } catch (IOException e) {
-            e.printStackTrace();
-        }
+               e.printStackTrace();
+             }
         return resultMap;
     }
 }

@@ -20,6 +20,7 @@
         <module>dw-chart</module>
         <module>Phoenix-IndexMasterObserver-Hbase</module>
         <module>gmall-canal</module>
+        <module>ElasticSearch-Test</module>
     </modules>
 
     <dependencies>
@@ -74,6 +75,11 @@
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
             <version>3.4.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
         </dependency>
     </dependencies>
 

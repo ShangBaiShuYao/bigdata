@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
+/**
+ * Desc: DAU 日活需求, GMV 交易额需求 <br/>
+ * create by shangbaishuyao on 2021/3/17
+ * @Author: 上白书妖
+ * @Date: 11:19 2021/3/17
+ */
 @RestController
 public class PublisherController {
     @Autowired

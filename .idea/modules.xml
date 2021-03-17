@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ElasticSearch-Test/ElasticSearch-Test.iml" filepath="$PROJECT_DIR$/ElasticSearch-Test/ElasticSearch-Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/Gmall/Gmall.iml" filepath="$PROJECT_DIR$/Gmall/Gmall.iml" />
       <module fileurl="file://$PROJECT_DIR$/Gmall/Gmall-common/Gmall-common.iml" filepath="$PROJECT_DIR$/Gmall/Gmall-common/Gmall-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/Gmall/Gmall-mockery/Gmall-mockery.iml" filepath="$PROJECT_DIR$/Gmall/Gmall-mockery/Gmall-mockery.iml" />

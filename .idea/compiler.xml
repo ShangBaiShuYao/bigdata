@@ -8,26 +8,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sparkCore" />
+        <module name="gmall-canal" />
         <module name="sparkSql" />
         <module name="Gmall-mockery" />
         <module name="sparkmall-common" />
-        <module name="gmall-canal" />
         <module name="Gmall-common" />
         <module name="gmall-pulisher" />
         <module name="sparkmall-offline" />
         <module name="sparkStreaming" />
         <module name="dw-chart" />
-        <module name="Phoenix-IndexMasterObserver-Hbase" />
+        <module name="ElasticSearch-Test" />
+        <module name="sparkCore" />
         <module name="gmall-logger" />
         <module name="gmall-realTime" />
         <module name="sparkmall-online" />
+        <module name="Phoenix-IndexMasterObserver-Hbase" />
         <module name="sparkmall-mock" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="bigdata" target="1.5" />
       <module name="dw-chart" target="1.8" />
+      <module name="ElasticSearch-Test" target="1.5" />
       <module name="Gmall" target="1.5" />
       <module name="gmall-canal" target="1.5" />
       <module name="Gmall-common" target="1.5" />
