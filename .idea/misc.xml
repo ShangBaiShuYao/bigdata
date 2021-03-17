@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-realTime/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-pulisher/pom.xml" />
+        <option value="$PROJECT_DIR$/dw-chart/pom.xml" />
       </list>
     </option>
   </component>

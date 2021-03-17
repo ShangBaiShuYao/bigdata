@@ -8,26 +8,34 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Gmall-common" />
-        <module name="sparkSql" />
-        <module name="sparkmall-offline" />
-        <module name="sparkStreaming" />
         <module name="sparkCore" />
-        <module name="sparkmall-mock" />
-        <module name="gmall-realTime" />
-        <module name="gmall-logger" />
-        <module name="sparkmall-online" />
+        <module name="sparkSql" />
         <module name="Gmall-mockery" />
         <module name="sparkmall-common" />
+        <module name="gmall-canal" />
+        <module name="Gmall-common" />
+        <module name="gmall-pulisher" />
+        <module name="sparkmall-offline" />
+        <module name="sparkStreaming" />
+        <module name="dw-chart" />
+        <module name="Phoenix-IndexMasterObserver-Hbase" />
+        <module name="gmall-logger" />
+        <module name="gmall-realTime" />
+        <module name="sparkmall-online" />
+        <module name="sparkmall-mock" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="bigdata" target="1.5" />
+      <module name="dw-chart" target="1.8" />
       <module name="Gmall" target="1.5" />
+      <module name="gmall-canal" target="1.5" />
       <module name="Gmall-common" target="1.5" />
       <module name="gmall-logger" target="1.8" />
       <module name="Gmall-mockery" target="1.5" />
+      <module name="gmall-pulisher" target="1.8" />
       <module name="gmall-realTime" target="1.5" />
+      <module name="Phoenix-IndexMasterObserver-Hbase" target="1.5" />
       <module name="sparkCore" target="1.5" />
       <module name="sparkGmall" target="1.8" />
       <module name="sparkmall-common" target="1.8" />
@@ -41,6 +49,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gmall-logger" options="-parameters" />
+      <module name="gmall-pulisher" options="" />
     </option>
   </component>
 </project>

@@ -16,6 +16,10 @@
         <module>Gmall</module>
         <module>gmall-logger</module>
         <module>gmall-realTime</module>
+        <module>gmall-pulisher</module>
+        <module>dw-chart</module>
+        <module>Phoenix-IndexMasterObserver-Hbase</module>
+        <module>gmall-canal</module>
     </modules>
 
     <dependencies>
@@ -41,6 +45,12 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
             <version>2.7.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>

@@ -4,8 +4,10 @@
     <file url="file://$PROJECT_DIR$/Gmall/Gmall-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gmall/Gmall-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gmall/Gmall-mockery/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dw-chart/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-logger/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-logger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall-pulisher/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
