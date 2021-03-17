@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 /**
- * Desc: 从es里面读数据 <br/>
+ * Desc: 从es里面读数据,查询数据 <br/>
  * create by shangbaishuyao on 2021/3/17
  * @Author: 上白书妖
  * @Date: 21:46 2021/3/17
@@ -93,6 +93,7 @@ public class EsReader {
 
         //7.解析searchResult
         System.out.println("命中条数：" + searchResult.getTotal() + "条！！！");
+        //将整个大的"hist":[{},{},{}]的json数组转化为map,第二位void不需要管它,直接拿map做操作
         List<SearchResult.Hit<Map, Void>> hits = searchResult.getHits(Map.class);
 
         //解析hits数据
@@ -109,6 +110,13 @@ public class EsReader {
             System.out.println(jsonObject.toString());
         }
 
+        /**
+         * 输出结果:
+         * 解析聚合数据!!!
+         * 9001->3
+         * 9002->1
+         * 最大年纪:18.0
+         */
         //解析聚合数据
         MetricAggregation aggregations = searchResult.getAggregations();
         TermsAggregation group_by_class_id = aggregations.getTermsAggregation("group_by_class_id");
