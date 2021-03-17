@@ -2,7 +2,6 @@ package com.shangbaishuyao.app
 
 import java.text.SimpleDateFormat
 import java.util.Date
-
 import com.alibaba.fastjson.JSON
 import com.shangbaishuyao.bean.StartUpLog
 import com.shangbaishuyao.constants.GmallConstants
@@ -35,6 +34,16 @@ object DAU {
     val sdf = new SimpleDateFormat("yyyy-MM-dd HH")
     //读取kafka数据,创建流 ,读取kafka行为日志主题, 通过用户行为判断日活
     val kafkaDStream: InputDStream[(String, String)] = MyKafkaUtil.getKafkaDStream(ssc, Set(GmallConstants.GMALL_START_TOPIC))
+
+    /**
+     * 测试打印结果
+     * {"area":"heilongjiang","uid":"477","os":"andriod","ch":"wandoujia","appid":"gmall","mid":"mid_130","type":"startup","vs":"1.2.0","ts":1615798586358}
+     * {"area":"shan1xi","uid":"40","os":"ios","ch":"appstore","appid":"gmall","mid":"mid_200","type":"startup","vs":"1.1.2","ts":1615798585620}
+     * {"area":"guangdong","uid":"171","os":"andriod","ch":"xiaomi","appid":"gmall","mid":"mid_246","type":"startup","vs":"1.1.2","ts":1615798585490}
+     * {"area":"sichuan","uid":"195","os":"ios","ch":"appstore","appid":"gmall","mid":"mid_358","type":"startup","vs":"1.2.0","ts":1615798585778}
+     */
+    //测试打印
+    kafkaDStream.map(_._2).print()
     //将从kafka中读取的每一行数据转换为样例类对象
     val startUpLogDStream: DStream[StartUpLog] = kafkaDStream.map(mapFunc = {
       case (key, value) => {
@@ -53,6 +62,8 @@ object DAU {
         startUpLog
       }
     })
+    //测试打印
+//    startUpLogDStream.print()
     //跨批次处理数据集
     val filterStartUpLogDStreamByRediskey: DStream[StartUpLog] = DauHandler.filterDataByRedis(startUpLogDStream, ssc.sparkContext)
     //同批次过滤数据集
@@ -68,16 +79,12 @@ object DAU {
         //把数据写入hbase+phoenix
         import org.apache.phoenix.spark._
         filterStartUpLogDStreamByGroup.saveToPhoenix(
-          "gmall_DAU",
-          Seq("MID","UID","APPID","AREA","OS","CH","TYPE","VS","LOGDATE","LOGHOUR","TS"),
+          "GMALL_DAU",  //表名
+          Seq("MID","UID","APPID","AREA","OS","CH","TYPE","VS","LOGDATE","LOGHOUR","TS"), //表里面的一个个的列
           new Configuration(),
-          Some("hadoop102,hadoop103,hadoop104:2181"))
+          Some("hadoop102,hadoop103,hadoop104:2181")) //zookeeper的连接地址
       }
     })
-    //测试打印
-    kafkaDStream.map(_._2).print()
-//    startUpLogDStream.print()
-
     //启动任务
     ssc.start()
     //阻塞

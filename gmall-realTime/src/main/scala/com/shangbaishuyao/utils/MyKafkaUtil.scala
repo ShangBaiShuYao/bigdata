@@ -33,6 +33,8 @@ object MyKafkaUtil {
       ssc,
       kafkaPara,
       topics)
+    //测试
+//    kafkaDStream.map(_._2).print()
     //4.返回数据
     kafkaDStream
   }

@@ -4,7 +4,7 @@ import java.util.Properties
 
 import redis.clients.jedis.{Jedis, JedisPool, JedisPoolConfig}
 /**
- * Desc: redis配置 <br/>
+ * Desc: 连接redis工具类<br/>
  * create by shangbaishuyao on 2021/3/14
  * @Author: 上白书妖
  * @Date: 18:05 2021/3/14
@@ -13,7 +13,7 @@ object RedisUtil {
   var jedisPool: JedisPool = _
   def getJedisClient: Jedis = {
     if (jedisPool == null) {
-      println("开辟一个连接池")
+      println("================开辟一个连接池==================")
       val config: Properties = PropertiesUtil.load("config.properties")
       val host: String = config.getProperty("redis.host")
       val port: String = config.getProperty("redis.port")
