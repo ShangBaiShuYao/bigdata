@@ -46,7 +46,7 @@ public class JsonMocker {
     };
     private RandomOptionGroup<String> vsOptionGroup = new RandomOptionGroup(vsOpts);
     private RanOpt[] eventOpts = {new RanOpt("addFavor", 10), new RanOpt("addComment", 30),
-            new RanOpt("addCart", 20), new RanOpt("clickItem", 40)
+            new RanOpt("addCart", 20), new RanOpt("clickItem", 40), new RanOpt("coupon", 40)
     };
     private RandomOptionGroup<String> eventOptionGroup = new RandomOptionGroup(eventOpts);
     private RanOpt[] channelOpts = {new RanOpt("xiaomi", 10), new RanOpt("huawei", 20),
@@ -155,7 +155,7 @@ public class JsonMocker {
             }
         }
     }
-    private void sendLog(String log) {
+    private void sendLog(String log)     {
         LogUploader.sendLogStream(log);
     }
     public static void main(String[] args) {
