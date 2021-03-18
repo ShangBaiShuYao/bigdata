@@ -68,21 +68,29 @@ public class CanalClient {
     }
 
     /**
-     * 我们当前采集的是下单的数据
+     * canal要监控那几张表 <br/>
+     * 这里面我们只要新增的部分
      * INSERT 表示我只要插入语句
+     *
+     * CanalEntry.EventType.INSERT.equals(eventType):   INSERT表示数据库里面新增的数据集
+     * CanalEntry.EventType.UPDATE.equals(eventType):   UPDATE表示数据库里面变化的数据集,比如修改了数据库里面的某个字段
+     *
      * @param tableName
      * @param rowDatasList
      * @param eventType
      */
     private static void handler(String tableName, List<CanalEntry.RowData> rowDatasList, CanalEntry.EventType eventType) {
+            //监控新增的数据集
         if ("order_info".equals(tableName) && CanalEntry.EventType.INSERT.equals(eventType)) { //INSERT 表示我只要插入语句
-            //将数据发送至order_info主题
+            //将数据发送至order_info主题 订单数据主题
             sendToKafka(rowDatasList, GmallConstants.GMALL_ORDER_TOPIC);
+            //监控新增的数据集
         } else if ("order_detail".equals(tableName) && CanalEntry.EventType.INSERT.equals(eventType)) {
-            //将数据发送至order_detail主题
+            //将数据发送至order_detail主题  订单详情主题
             sendToKafka(rowDatasList, GmallConstants.GMALL_ORDER_DETAIL_TOPIC);
+            //监控新增及变化的数据集
         } else if ("user_info".equals(tableName) && (CanalEntry.EventType.INSERT.equals(eventType) || CanalEntry.EventType.UPDATE.equals(eventType))) {
-            //将数据发送至user_info主题
+            //将数据发送至user_info主题  用户信息主题
             sendToKafka(rowDatasList, GmallConstants.GMALL_USER_TOPIC);
         }
     }
