@@ -21,7 +21,7 @@ public class GmallConstants {
     public static final String GMALL_ES_ALERT_INFO_INDEX = "gmall_coupon_alert";
 
     //ES订单详情数据的Index名
-    public static final String GMALL_ES_SALE_DETAIL_INDEX = "gmall1_sale_detail";
+    public static final String GMALL_ES_SALE_DETAIL_INDEX = "gmall_sale_detail";
 
 
 }
