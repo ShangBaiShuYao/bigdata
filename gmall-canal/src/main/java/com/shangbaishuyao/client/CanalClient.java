@@ -8,8 +8,10 @@ import com.alibaba.otter.canal.protocol.Message;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.shangbaishuyao.constants.GmallConstants;
 import com.shangbaishuyao.utils.KafkaSender;
+
 import java.net.InetSocketAddress;
 import java.util.List;
+
 /**
  * Desc: 编写canal发送至kafka <br/>
  * create by shangbaishuyao on 2021/3/17
@@ -82,14 +84,33 @@ public class CanalClient {
     private static void handler(String tableName, List<CanalEntry.RowData> rowDatasList, CanalEntry.EventType eventType) {
             //监控新增的数据集
         if ("order_info".equals(tableName) && CanalEntry.EventType.INSERT.equals(eventType)) { //INSERT 表示我只要插入语句
+
+            //TODO 这个表示我对数据到达的时间做破坏,模拟网络延迟使得数据集不能再同一个批次中拿到,我的批次建立的是3秒
+//            try {
+//                Thread.sleep(new Random().nextInt(5)*1000); //0-4秒
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             //将数据发送至order_info主题 订单数据主题
             sendToKafka(rowDatasList, GmallConstants.GMALL_ORDER_TOPIC);
             //监控新增的数据集
         } else if ("order_detail".equals(tableName) && CanalEntry.EventType.INSERT.equals(eventType)) {
+            //TODO 这个表示我对数据到达的时间做破坏,模拟网络延迟使得数据集不能再同一个批次中拿到,我的批次建立的是3秒
+//            try {
+//                Thread.sleep(new Random().nextInt(5)*1000); //0-4秒
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             //将数据发送至order_detail主题  订单详情主题
             sendToKafka(rowDatasList, GmallConstants.GMALL_ORDER_DETAIL_TOPIC);
             //监控新增及变化的数据集
         } else if ("user_info".equals(tableName) && (CanalEntry.EventType.INSERT.equals(eventType) || CanalEntry.EventType.UPDATE.equals(eventType))) {
+            //TODO 这个表示我对数据到达的时间做破坏,模拟网络延迟使得数据集不能再同一个批次中拿到,我的批次建立的是3秒
+//            try {
+//                Thread.sleep(new Random().nextInt(5)*1000); //0-4秒
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             //将数据发送至user_info主题  用户信息主题
             sendToKafka(rowDatasList, GmallConstants.GMALL_USER_TOPIC);
         }
