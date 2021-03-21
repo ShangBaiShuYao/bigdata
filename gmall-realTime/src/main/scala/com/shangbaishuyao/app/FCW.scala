@@ -54,10 +54,14 @@ object FCW {
     val sdf = new SimpleDateFormat("yyyy-MM-dd HH")
     //3.读取Kafka数据创建流
     val kafkaDStream: InputDStream[(String, String)] = MyKafkaUtil.getKafkaDStream(ssc, Set(GmallConstants.GMALL_EVENT_TOPIC))
+    //测试打印
+//    kafkaDStream.print()
     //4.转换为样例类对象
     val midToEventInfoDStream: DStream[(String, EventInfo)] = kafkaDStream.map (mapFunc = {
       case (_, value) =>{
         val info: EventInfo = JSON.parseObject(value, classOf[EventInfo])
+        //打印测试
+//        println(info.evid+"============info.evid=============")
         //取出时间戳
         val ts: Long = info.ts
         //yyyy-MM-dd HH
@@ -71,34 +75,52 @@ object FCW {
         (info.mid, info)
       }
     })
+    //测试打印
+//    midToEventInfoDStream.print()
     //因为我们用到了窗口操作,所以会出现窗口内有重复数据的问题
     //5.开窗并按照mid进行分组
     val midToEventInfoDStreamIter: DStream[(String, Iterable[EventInfo])] = midToEventInfoDStream.window(Seconds(30)).groupByKey()
+    //测试打印
+//    midToEventInfoDStreamIter.print()
+    /**
+     * (mid_755,ArrayBuffer(EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addComment,19,10,47,2021-03-18,14,1616048443138), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,28,30,8,2021-03-18,14,1616048443153), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,7,1,8,2021-03-18,14,1616048443209), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,38,34,29,2021-03-18,14,1616048443171), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addCart,40,37,41,2021-03-18,14,1616048443190), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,44,16,28,2021-03-18,14,1616048443248), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,45,9,4,2021-03-18,14,1616048443207), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addComment,50,16,46,2021-03-18,14,1616048443226), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addCart,18,20,19,2021-03-18,14,1616048443282), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,9,50,43,2021-03-18,14,1616048443241), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addComment,9,9,11,2021-03-18,14,1616048443262), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,13,47,11,2021-03-18,14,1616048443317), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,48,36,28,2021-03-18,14,1616048443147), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,10,29,33,2021-03-18,14,1616048443166), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,10,17,4,2021-03-18,14,1616048443222), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,33,18,40,2021-03-18,14,1616048443191), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addComment,35,38,22,2021-03-18,14,1616048443208), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addCart,17,20,13,2021-03-18,14,1616048443266), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addComment,29,10,32,2021-03-18,14,1616048443223), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,2,5,49,2021-03-18,14,1616048443245), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,addComment,27,20,32,2021-03-18,14,1616048443301), EventInfo(mid_755,2004,gmall,shanghai,andriod,null,event,clickItem,14,47,41,2021-03-18,14,1616048443260)))
+     * (mid_377,ArrayBuffer(EventInfo(mid_377,2834,gmall,shanghai,andriod,null,event,clickItem,29,18,34,2021-03-18,14,1616048461647), EventInfo(mid_377,2834,gmall,shanghai,andriod,null,event,clickItem,50,45,6,2021-03-18,14,1616048461587), EventInfo(mid_377,2834,gmall,shanghai,andriod,null,event,addFavor,7,46,0,2021-03-18,14,1616048461623), EventInfo(mid_377,2834,gmall,shanghai,andriod,null,event,clickItem,11,28,33,2021-03-18,14,1616048461604), EventInfo(mid_377,2834,gmall,shanghai,andriod,null,event,clickItem,28,29,49,2021-03-18,14,1616048461660), EventInfo(mid_377,2834,gmall,shanghai,andriod,null,event,addCart,22,31,15,2021-03-18,14,1616048461600)))
+     * (mid_1141,ArrayBuffer(EventInfo(mid_1141,272,gmall,shan1xi,andriod,null,event,addCart,28,17,41,2021-03-18,14,1616048436339), EventInfo(mid_1141,272,gmall,shan1xi,andriod,null,event,addCart,6,44,24,2021-03-18,14,1616048436428), EventInfo(mid_1141,272,gmall,shan1xi,andriod,null,event,addComment,36,27,5,2021-03-18,14,1616048436360)))
+     * (mid_1985,ArrayBuffer(EventInfo(mid_1985,2262,gmall,heilongjiang,ios,null,event,addComment,27,40,2,2021-03-18,14,1616048439451), EventInfo(mid_1985,2262,gmall,heilongjiang,ios,null,event,clickItem,20,18,10,2021-03-18,14,1616048439391)))
+     * (mid_4771,ArrayBuffer(EventInfo(mid_4771,3298,gmall,heilongjiang,andriod,null,event,clickItem,7,33,7,2021-03-18,14,1616048444343), EventInfo(mid_4771,3298,gmall,heilongjiang,andriod,null,event,clickItem,42,29,26,2021-03-18,14,1616048444299), EventInfo(mid_4771,3298,gmall,heilongjiang,andriod,null,event,addComment,6,36,35,2021-03-18,14,1616048444285), EventInfo(mid_4771,3298,gmall,heilongjiang,andriod,null,event,addCart,32,1,22,2021-03-18,14,1616048444282)))
+     * (mid_4074,ArrayBuffer(EventInfo(mid_4074,3889,gmall,shan3xi,ios,null,event,clickItem,33,26,13,2021-03-18,14,1616048449193), EventInfo(mid_4074,3889,gmall,shan3xi,ios,null,event,addCart,24,31,48,2021-03-18,14,1616048449178)))
+     */
     //6.选择需要预警的mid
-    val filterMidToEventInfoDStreamIter: DStream[(String, Iterable[EventInfo])] = midToEventInfoDStreamIter.filter {
-      case (mid, alertInfoIter) =>
-      //存放30S内统一设备ID下的UID
-      val uidSet = new mutable.HashSet[String]()
-      //定义标志位，默认没有点击商品行为
-      var flag = true
-      //遍历数据集
-      breakable {
-        alertInfoIter.foreach(alertInfo => {
-          //判断是否为领券行为
-          if ("coupon".equals(alertInfo.evid)) {
-            // 将当前用户id加入uidSet
-            uidSet.add(alertInfo.uid)
-          } else if ("clickItem".equals(alertInfo.evid)) {
-            //有点击商品行为，则不做预警
-            flag = false
-            break()
-          }
-        })
+    val filterMidToEventInfoDStreamIter: DStream[(String, Iterable[EventInfo])] = midToEventInfoDStreamIter.filter(filterFunc = {
+      case (mid, alertInfoIter) =>{
+        //存放30S内统一设备ID下的UID
+        val uidSet = new mutable.HashSet[String]()
+        //定义标志位，默认没有点击商品行为
+        var flag = true
+        //遍历数据集
+        breakable {
+          alertInfoIter.foreach(f = {
+            alertInfo => {
+              //判断是否为领券行为
+              if ("coupon".equals(alertInfo.evid)) {
+                // 将当前用户id加入uidSet
+                uidSet.add(alertInfo.uid)
+//                println(alertInfo.uid)
+              } else if ("clickItem".equals(alertInfo.evid)) {
+                //有点击商品行为，则不做预警
+                flag = false
+                break()
+              }
+            }
+          })
+        }
+//        println(uidSet)
+        //最终返回 拉黑
+        uidSet.size >= 3 && flag
       }
-      //最终返回 拉黑
-      uidSet.size >= 3 && flag
-    }
-
+    })
+    //测试打印
+    filterMidToEventInfoDStreamIter.print()
     //7.生成预警日志
     val alertInfoDStream: DStream[CouponAlertInfo] = filterMidToEventInfoDStreamIter.map {
       case (mid, iter) =>
@@ -119,11 +141,15 @@ object FCW {
       //生成预警日志
       CouponAlertInfo(mid, uidSet, itmesSet, eventList, System.currentTimeMillis())
     }
+    //测试打印
+//    alertInfoDStream.print()
     //8.alertInfoDStream转换结构
     val mindToAlertInfoDStream: DStream[(String, CouponAlertInfo)] = alertInfoDStream.map(alertInfo => {
       //取出时间戳
       val ts: Long = alertInfo.ts
+      //将ts毫秒数转化为分钟
       val min: Long = ts / 1000 / 60
+      //拼接
       (s"${alertInfo.mid}_$min", alertInfo)
     })
     //9.将数据写入ES
@@ -134,8 +160,8 @@ object FCW {
       })
     })
     //测试打印
-    //    midToEventInfoDStream.print
-    alertInfoDStream.print
+//    midToEventInfoDStream.print
+//    alertInfoDStream.print
     //启动任务
     ssc.start()
     ssc.awaitTermination()
