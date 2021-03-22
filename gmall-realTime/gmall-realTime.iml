@@ -12,6 +12,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.json4s:json4s-native_2.11:3.5.4" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.11.12" level="project" />
+    <orderEntry type="library" name="Maven: org.json4s:json4s-core_2.11:3.5.4" level="project" />
+    <orderEntry type="library" name="Maven: org.json4s:json4s-ast_2.11:3.5.4" level="project" />
+    <orderEntry type="library" name="Maven: org.json4s:json4s-scalap_2.11:3.5.4" level="project" />
+    <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-xml_2.11:1.0.6" level="project" />
     <orderEntry type="module" module-name="Gmall-common" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.47" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.5" level="project" />
@@ -49,12 +56,7 @@
     <orderEntry type="library" name="Maven: net.jpountz.lz4:lz4:1.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.roaringbitmap:RoaringBitmap:0.5.11" level="project" />
     <orderEntry type="library" name="Maven: commons-net:commons-net:2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.11.8" level="project" />
     <orderEntry type="library" name="Maven: org.json4s:json4s-jackson_2.11:3.2.11" level="project" />
-    <orderEntry type="library" name="Maven: org.json4s:json4s-core_2.11:3.2.11" level="project" />
-    <orderEntry type="library" name="Maven: org.json4s:json4s-ast_2.11:3.2.11" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang:scalap:2.11.0" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.11.0" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-client:2.22.2" level="project" />
     <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-api:2.4.0-b34" level="project" />
@@ -95,7 +97,6 @@
     <orderEntry type="library" name="Maven: org.apache.kafka:kafka-clients:0.11.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-streaming-kafka-0-8_2.11:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.kafka:kafka_2.11:0.8.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-xml_2.11:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.yammer.metrics:metrics-core:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-parser-combinators_2.11:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.101tec:zkclient:0.3" level="project" />
@@ -206,7 +207,6 @@
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro:1.7.4" level="project" />
-    <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-auth:2.7.2" level="project" />

@@ -9,6 +9,7 @@ import io.searchbox.core.{Bulk, BulkResult, Index}
 import collection.JavaConversions._
 /**
  * Desc: 连接ElasticSearch工具类 <br/>
+ * 在es里面提前建立好索引
  * create by shangbaishuyao on 2021/3/17
  * @Author: 上白书妖
  * @Date: 12:00 2021/3/17
@@ -50,6 +51,10 @@ object MyElasticSearchUtil {
   }
 
   // 批量插入数据到ES
+  /***
+   * @param indexName
+   * @param docList : List[(String, Any)] 文档list("_doc"),list里面的string类型是id, Any是es里面的source
+   */
   def insertBulk(indexName: String, docList: List[(String, Any)]): Unit = {
     if (docList.nonEmpty) {
       //获取客户端
