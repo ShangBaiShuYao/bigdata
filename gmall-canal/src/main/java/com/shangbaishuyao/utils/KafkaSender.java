@@ -7,7 +7,7 @@ import java.util.Properties;
  * Desc: kafka 发送者 <br/>
  * 将canal里面监控的数据发送至kafka
  * create by shangbaishuyao on 2021/3/17
- * @Author: 上白书妖
+ * @Author: 上白书妖 
  * @Date: 0:18 2021/3/17
  */
 public class KafkaSender {
