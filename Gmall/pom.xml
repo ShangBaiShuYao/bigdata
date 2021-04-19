@@ -13,6 +13,9 @@
     <modules>
         <module>Gmall-common</module>
         <module>Gmall-mockery</module>
+        <module>gmall0820-logger</module>
+        <module>gmall0820-realtime</module>
+        <module>gmall0820-publisher</module>
     </modules>
     <properties>
         <spark.version>2.1.1</spark.version>

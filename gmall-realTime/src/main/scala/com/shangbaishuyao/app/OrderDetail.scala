@@ -1,7 +1,6 @@
 package com.shangbaishuyao.app
 
 import java.util
-
 import com.alibaba.fastjson.JSON
 import com.shangbaishuyao.bean.{OrderDetail, OrderInfo, SaleDetail, UserInfo}
 import com.shangbaishuyao.constants.GmallConstants
@@ -11,7 +10,6 @@ import org.apache.spark.streaming.dstream.{DStream, InputDStream}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import redis.clients.jedis.Jedis
 import org.json4s.native.Serialization
-
 import scala.collection.mutable.ListBuffer
 
 /**

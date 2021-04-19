@@ -11,47 +11,67 @@
         <module name="gmall-canal" />
         <module name="sparkSql" />
         <module name="Gmall-mockery" />
+        <module name="gmall-pulisher" />
         <module name="sparkmall-common" />
         <module name="Gmall-common" />
-        <module name="gmall-pulisher" />
-        <module name="sparkmall-offline" />
         <module name="sparkStreaming" />
+        <module name="sparkmall-offline" />
         <module name="dw-chart" />
         <module name="ElasticSearch-Test" />
+        <module name="sparkmall-mock" />
         <module name="sparkCore" />
         <module name="gmall-logger" />
         <module name="gmall-realTime" />
-        <module name="sparkmall-online" />
         <module name="Phoenix-IndexMasterObserver-Hbase" />
-        <module name="sparkmall-mock" />
+        <module name="sparkmall-online" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="bigdata" target="1.5" />
+      <module name="bigdata (1)" target="1.5" />
       <module name="dw-chart" target="1.8" />
       <module name="ElasticSearch-Test" target="1.5" />
       <module name="Gmall" target="1.5" />
+      <module name="Gmall (1)" target="1.5" />
       <module name="gmall-canal" target="1.5" />
       <module name="Gmall-common" target="1.5" />
+      <module name="Gmall-common (1)" target="1.5" />
       <module name="gmall-logger" target="1.8" />
+      <module name="gmall-logger (1)" target="1.8" />
       <module name="Gmall-mockery" target="1.5" />
+      <module name="Gmall-mockery (1)" target="1.5" />
       <module name="gmall-pulisher" target="1.8" />
       <module name="gmall-realTime" target="1.5" />
+      <module name="gmall-realTime (1)" target="1.5" />
+      <module name="gmall0820-logger" target="1.8" />
+      <module name="gmall0820-publisher" target="1.8" />
+      <module name="gmall0820-realtime" target="1.8" />
       <module name="Phoenix-IndexMasterObserver-Hbase" target="1.5" />
       <module name="sparkCore" target="1.5" />
+      <module name="sparkCore (1)" target="1.5" />
       <module name="sparkGmall" target="1.8" />
+      <module name="sparkGmall (1)" target="1.8" />
       <module name="sparkmall-common" target="1.8" />
+      <module name="sparkmall-common (1)" target="1.8" />
       <module name="sparkmall-mock" target="1.8" />
+      <module name="sparkmall-mock (1)" target="1.8" />
       <module name="sparkmall-offline" target="1.8" />
+      <module name="sparkmall-offline (1)" target="1.8" />
       <module name="sparkmall-online" target="1.8" />
+      <module name="sparkmall-online (1)" target="1.8" />
       <module name="sparkSql" target="1.5" />
+      <module name="sparkSql (1)" target="1.5" />
       <module name="sparkStreaming" target="1.5" />
+      <module name="sparkStreaming (1)" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gmall-logger" options="-parameters" />
+      <module name="gmall-logger (1)" options="-parameters" />
       <module name="gmall-pulisher" options="" />
+      <module name="gmall0820-logger" options="-parameters" />
+      <module name="gmall0820-publisher" options="-parameters" />
     </option>
   </component>
 </project>

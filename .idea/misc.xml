@@ -7,7 +7,20 @@
         <option value="$PROJECT_DIR$/gmall-realTime/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-pulisher/pom.xml" />
         <option value="$PROJECT_DIR$/dw-chart/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall0820-logger/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall0820-publisher/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall0820-realtime/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../../bigdata/bigdata/Gmall/Gmall-common/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bigdata/bigdata/Gmall/Gmall-mockery/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bigdata/bigdata/sparkGmall/sparkmall-common/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bigdata/bigdata/sparkGmall/sparkmall-mock/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bigdata/bigdata/sparkGmall/sparkmall-offline/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bigdata/bigdata/sparkGmall/sparkmall-online/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
